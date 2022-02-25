@@ -1132,8 +1132,7 @@ def plot_contours(A, Cn, thr=None, thr_method='max', maxthr=0.2, nrgthr=0.9, dis
                 ax.text(cm[i, 1], cm[i, 0], str(i + 1), color=colors, **number_args)
 
         print('save contour fig....')
-
-        pl.savefig('/content/drive/MyDrive/class_mathbio/2021/0228/contours.jpg')
+        pl.savefig('/content/drive/MyDrive/Colab Notebooks/class_mathbio/2021/0228/data/contours.jpg')
 
     return coordinates
 

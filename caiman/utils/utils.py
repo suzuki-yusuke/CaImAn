@@ -89,8 +89,7 @@ def download_demo(name:str='Sue_2x_3000_40_-46.tif', save_folder:str='') -> str:
                  'blood_vessel_10Hz.mat': 'https://caiman.flatironinstitute.org/~neuro/caiman_downloadables/blood_vessel_10Hz.mat',
                  'online_vs_offline.npz': 'https://caiman.flatironinstitute.org/~neuro/caiman_downloadables/online_vs_offline.npz',
                  'demo_voltage_imaging_ROIs.hdf5': 'https://caiman.flatironinstitute.org/~neuro/caiman_downloadables/demo_voltage_imaging_ROIs.hdf5',
-                 'demo_voltage_imaging.hdf5': 'https://caiman.flatironinstitute.org/~neuro/caiman_downloadables/demo_voltage_imaging.hdf5',
-                 'mv.tif': 'https://drive.google.com/file/d/1i_31ERUFH6VnMIprc4eIH2swm4kx6365/view?usp=sharing'}
+                 'demo_voltage_imaging.hdf5': 'https://caiman.flatironinstitute.org/~neuro/caiman_downloadables/demo_voltage_imaging.hdf5'}
     #          ,['./example_movies/demoMovie.tif','https://caiman.flatironinstitute.org/~neuro/caiman_downloadables/demoMovie.tif']]
     base_folder = os.path.join(caiman_datadir(), 'example_movies')
     if os.path.exists(base_folder):
