@@ -240,7 +240,7 @@ def nb_view_patches(Yr, A, C, b, f, d1, d2, YrA=None, image_neurons=None, thr=0.
             metrics_ = ColumnDataSource(data=dict(R=r_values, SNR=SNR, CNN=cnn_preds))
             code += """
                 mets[3] = metrics_.data['CNN'][f].toFixed(3)
-            """   
+            """
         labels = LabelSet(x=0, y='y', text='keys', source=metrics, render_mode='canvas')
         labels2 = LabelSet(x=10, y='y', text='mets', source=metrics, render_mode='canvas', text_align="right")
         plot2 = bpl.figure(plot_width=200, plot_height=100, toolbar_location = None)
@@ -249,7 +249,7 @@ def nb_view_patches(Yr, A, C, b, f, d1, d2, YrA=None, image_neurons=None, thr=0.
         plot2.tools.visible = False
         plot2.line([0,10], [0,4], line_alpha=0)
         plot2.add_layout(labels)
-        plot2.add_layout(labels2)     
+        plot2.add_layout(labels2)
     else:
         metrics, metrics_ = None, None
 
@@ -1041,6 +1041,10 @@ def view_patches_bar(Yr, A, C, b, f, d1, d2, YrA=None, img=None,
 #%%
 
 
+
+################################################################################
+################################################################################
+################################################################################
 def plot_contours(A, Cn, thr=None, thr_method='max', maxthr=0.2, nrgthr=0.9, display_numbers=True, max_number=None,
                   cmap=None, swap_dim=False, colors='w', vmin=None, vmax=None, coordinates=None,
                   contour_args={}, number_args={}, **kwargs):
@@ -1049,31 +1053,31 @@ def plot_contours(A, Cn, thr=None, thr_method='max', maxthr=0.2, nrgthr=0.9, dis
      Args:
          A:   np.ndarray or sparse matrix
                    Matrix of Spatial components (d x K)
-    
+
          Cn:  np.ndarray (2D)
                    Background image (e.g. mean, correlation)
-    
+
          thr_method: [optional] string
                   Method of thresholding:
                       'max' sets to zero pixels that have value less than a fraction of the max value
                       'nrg' keeps the pixels that contribute up to a specified fraction of the energy
-    
+
          maxthr: [optional] scalar
                     Threshold of max value
-    
+
          nrgthr: [optional] scalar
                     Threshold of energy
-    
+
          thr: scalar between 0 and 1
                    Energy threshold for computing contours (default 0.9)
                    Kept for backwards compatibility. If not None then thr_method = 'nrg', and nrgthr = thr
-    
+
          display_number:     Boolean
                    Display number of ROIs if checked (default True)
-    
+
          max_number:    int
                    Display the number for only the first max_number components (default None, display all numbers)
-    
+
          cmap:     string
                    User specifies the colormap (default None, default colormap)
 
@@ -1126,7 +1130,15 @@ def plot_contours(A, Cn, thr=None, thr_method='max', maxthr=0.2, nrgthr=0.9, dis
                 ax.text(cm[i, 0], cm[i, 1], str(i + 1), color=colors, **number_args)
             else:
                 ax.text(cm[i, 1], cm[i, 0], str(i + 1), color=colors, **number_args)
+
+        print('save contour fig....')
+        pl.savefig('/content/drive/MyDrive/Colab Notebooks/contours.jpg')
+
     return coordinates
+
+
+
+
 
 def plot_shapes(Ab, dims, num_comps=15, size=(15, 15), comps_per_row=None,
                 cmap='viridis', smoother=lambda s: median_filter(s, 3)):
@@ -1188,7 +1200,7 @@ def inspect_correlation_pnr(correlation_image_pnr, pnr_image):
     Args:
         correlation_image_pnr: ndarray
             correlation image created with caiman.summary_images.correlation_pnr
-    
+
         pnr_image: ndarray
             peak-to-noise image created with caiman.summary_images.correlation_pnr
     """
