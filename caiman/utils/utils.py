@@ -60,7 +60,7 @@ def download_demo(name:str='Sue_2x_3000_40_-46.tif', save_folder:str='') -> str:
         Args:
             name: str
                 the path of the file correspondong to a file in the filelist (''Sue_2x_3000_40_-46.tif' or 'demoMovieJ.tif')
-    
+
             save_folder: str
                 folder inside ./example_movies to which the files will be saved. Will be created if it doesn't exist
         Returns:
@@ -89,7 +89,8 @@ def download_demo(name:str='Sue_2x_3000_40_-46.tif', save_folder:str='') -> str:
                  'blood_vessel_10Hz.mat': 'https://caiman.flatironinstitute.org/~neuro/caiman_downloadables/blood_vessel_10Hz.mat',
                  'online_vs_offline.npz': 'https://caiman.flatironinstitute.org/~neuro/caiman_downloadables/online_vs_offline.npz',
                  'demo_voltage_imaging_ROIs.hdf5': 'https://caiman.flatironinstitute.org/~neuro/caiman_downloadables/demo_voltage_imaging_ROIs.hdf5',
-                 'demo_voltage_imaging.hdf5': 'https://caiman.flatironinstitute.org/~neuro/caiman_downloadables/demo_voltage_imaging.hdf5'}
+                 'demo_voltage_imaging.hdf5': 'https://caiman.flatironinstitute.org/~neuro/caiman_downloadables/demo_voltage_imaging.hdf5',
+                 'mv.tif': 'https://drive.google.com/file/d/1i_31ERUFH6VnMIprc4eIH2swm4kx6365/view?usp=sharing'}
     #          ,['./example_movies/demoMovie.tif','https://caiman.flatironinstitute.org/~neuro/caiman_downloadables/demoMovie.tif']]
     base_folder = os.path.join(caiman_datadir(), 'example_movies')
     if os.path.exists(base_folder):
@@ -107,8 +108,8 @@ def download_demo(name:str='Sue_2x_3000_40_-46.tif', save_folder:str='') -> str:
                 from urllib.request import Request
                 req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
                 f = urlopen(req)
-                
-                
+
+
             data = f.read()
             with open(path_movie, "wb") as code:
                 code.write(data)
@@ -128,7 +129,7 @@ def download_model(name:str='mask_rcnn', save_folder:str='') -> str:
         Args:
             name: str
                 the path of the file correspondong to a file in the filelist
-    
+
             save_folder: str
                 folder inside caiman_data/model to which the files will be saved. Will be created if it doesn't exist
         Returns:
@@ -157,7 +158,7 @@ def download_model(name:str='mask_rcnn', save_folder:str='') -> str:
                 from urllib.request import Request
                 req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
                 f = urlopen(req)
-                                
+
             data = f.read()
             with open(path_movie, "wb") as code:
                 code.write(data)
@@ -352,22 +353,22 @@ def apply_magic_wand(A, gSig, dims, A_thr=None, coms=None, dview=None,
     Args:
         A:
             output of CNMF
-    
+
         gSig: tuple
             input of CNMF (half neuron size)
-    
+
         A_thr:
             thresholded version of A
-    
+
         coms:
             centers of the magic wand
-    
+
         dview:
             for parallelization
-    
+
         min_frac:
             fraction of minimum of gSig to take as minimum size
-    
+
         max_frac:
             multiplier of maximum of gSig to take as maximum size
 
@@ -653,7 +654,7 @@ def get_caiman_version() -> Tuple[str, str]:
             for line in sfh:
                 if ':' in line: # expect a line like "Version:1.3"
                     _, version = line.rstrip().split(':')
-                    return 'RELF', version 
+                    return 'RELF', version
 
     # Attempt: 'FILE'
     # Right now this samples the utils directory
@@ -664,4 +665,3 @@ def get_caiman_version() -> Tuple[str, str]:
         if last_modified > newest:
             newest = last_modified
     return 'FILE', str(int(newest))
-

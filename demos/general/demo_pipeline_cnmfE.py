@@ -61,7 +61,8 @@ def main():
 
 # %% First setup some parameters for motion correction
     # dataset dependent parameters
-    fnames = ['data_endoscope.tif']  # filename to be processed
+    #fnames = ['data_endoscope.tif']  # filename to be processed
+    fnames = ['mv.tif']  # filename to be processed
     fnames = [download_demo(fnames[0])]  # download file if not already present
     filename_reorder = fnames
     fr = 10                          # movie frame rate
