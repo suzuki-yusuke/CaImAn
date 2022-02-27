@@ -350,6 +350,10 @@ class Estimates(object):
                 r_values=None if self.r_values is None else self.r_values[idx],
                 SNR=None if self.SNR_comp is None else self.SNR_comp[idx],
                 cnn_preds=None if np.sum(self.cnn_preds) in (0, None) else self.cnn_preds[idx])
+
+        print('save traces....')
+        pl.savefig('/content/drive/MyDrive/Colab Notebooks/class_mathbio/2021/0228/data/traces.jpg')
+
         return self
 
     def nb_view_components(self, Yr=None, img=None, idx=None,

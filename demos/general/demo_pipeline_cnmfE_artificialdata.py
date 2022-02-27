@@ -226,6 +226,7 @@ def main():
     if display_images:
         cnm.estimates.plot_contours(img=cn_filter, idx=cnm.estimates.idx_components)
         cnm.estimates.view_components(images, idx=cnm.estimates.idx_components)
+        cnm.estimates.view_components(img=cn)
 
 # %% MOVIES
     display_images = False           # Set to true to show movies and images
