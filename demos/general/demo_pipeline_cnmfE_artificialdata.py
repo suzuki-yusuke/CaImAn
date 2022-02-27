@@ -74,7 +74,7 @@ def main():
     motion_correct = True            # flag for motion correction
     pw_rigid = False                 # flag for pw-rigid motion correction
 
-    gSig_filt = (5, 5)   # size of filter, in general gSig (see below),
+    gSig_filt = (6, 6)   # size of filter, in general gSig (see below),
     #                      change this one if algorithm does not work
     max_shifts = (5, 5)  # maximum allowed rigid shift
     strides = (48, 48)   # start a new patch for pw-rigid motion correction every x pixels
@@ -139,7 +139,7 @@ def main():
     rf = 40             # half-size of the patches in pixels. e.g., if rf=40, patches are 80x80
     stride_cnmf = 20    # amount of overlap between the patches in pixels
     #                     (keep it at least large as gSiz, i.e 4 times the neuron size gSig)
-    tsub = 2            # downsampling factor in time for initialization,
+    tsub = 1            # downsampling factor in time for initialization,
     #                     increase if you have memory problems
     ssub = 1            # downsampling factor in space for initialization,
     #                     increase if you have memory problems
