@@ -309,6 +309,13 @@ class Estimates(object):
                                thr=thr, params=params, cmap=cmap)
         return self
 
+
+
+
+
+###############################################################################
+###############################################################################
+###############################################################################
     def view_components(self, Yr=None, img=None, idx=None):
         """view spatial and temporal components interactively
 
@@ -352,7 +359,7 @@ class Estimates(object):
                 cnn_preds=None if np.sum(self.cnn_preds) in (0, None) else self.cnn_preds[idx])
 
         print('save traces....')
-        pl.savefig('/content/drive/MyDrive/Colab Notebooks/class_mathbio/2021/0228/data/traces.jpg')
+        plt.savefig('/content/drive/MyDrive/Colab Notebooks/class_mathbio/2021/0228/data/traces.jpg')
 
         return self
 

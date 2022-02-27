@@ -908,6 +908,10 @@ def display_animation(anim, fps=20):
 #%%
 
 
+
+################################################################################
+################################################################################
+################################################################################
 def view_patches_bar(Yr, A, C, b, f, d1, d2, YrA=None, img=None,
                      r_values=None, SNR=None, cnn_preds=None):
     """view spatial and temporal components interactively
@@ -1017,6 +1021,11 @@ def view_patches_bar(Yr, A, C, b, f, d1, d2, YrA=None, img=None,
             ax2.cla()
             ax2.plot(np.arange(T), np.squeeze(np.array(f[i - nr, :])))
             ax2.set_title('Temporal background ' + str(i + 1 - nr))
+
+    print('save traces...')
+    pl.savefig('/content/drive/MyDrive/Colab Notebooks/class_mathbio/2021/0228/data/traces.jpg')
+
+
 
     def arrow_key_image_control(event):
 
@@ -1131,7 +1140,7 @@ def plot_contours(A, Cn, thr=None, thr_method='max', maxthr=0.2, nrgthr=0.9, dis
             else:
                 ax.text(cm[i, 1], cm[i, 0], str(i + 1), color=colors, **number_args)
 
-        print('save contour fig....')
+        print('save footprints....')
         pl.savefig('/content/drive/MyDrive/Colab Notebooks/class_mathbio/2021/0228/data/contours.jpg')
 
     return coordinates
