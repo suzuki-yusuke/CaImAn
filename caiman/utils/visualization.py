@@ -1022,8 +1022,8 @@ def view_patches_bar(Yr, A, C, b, f, d1, d2, YrA=None, img=None,
             ax2.plot(np.arange(T), np.squeeze(np.array(f[i - nr, :])))
             ax2.set_title('Temporal background ' + str(i + 1 - nr))
 
-    print('save traces...')
-    pl.savefig('/content/drive/MyDrive/Colab Notebooks/class_mathbio/2021/0228/data/traces.jpg')
+        print('save traces...')
+        pl.savefig('/content/drive/MyDrive/Colab Notebooks/class_mathbio/2021/0228/data/traces.jpg')
 
 
 
