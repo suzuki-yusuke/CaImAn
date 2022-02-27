@@ -74,7 +74,7 @@ def main():
     motion_correct = True            # flag for motion correction
     pw_rigid = False                 # flag for pw-rigid motion correction
 
-    gSig_filt = (3, 3)   # size of filter, in general gSig (see below),
+    gSig_filt = (5, 5)   # size of filter, in general gSig (see below),
     #                      change this one if algorithm does not work
     max_shifts = (5, 5)  # maximum allowed rigid shift
     strides = (48, 48)   # start a new patch for pw-rigid motion correction every x pixels
@@ -132,8 +132,8 @@ def main():
 
     p = 1               # order of the autoregressive system
     K = None            # upper bound on number of components per patch, in general None for 1p data
-    gSig = (3, 3)       # gaussian width of a 2D gaussian kernel, which approximates a neuron
-    gSiz = (13, 13)     # average diameter of a neuron, in general 4*gSig+1
+    gSig = (5, 5)       # gaussian width of a 2D gaussian kernel, which approximates a neuron
+    gSiz = (21, 21)     # average diameter of a neuron, in general 4*gSig+1
     Ain = None          # possibility to seed with predetermined binary masks
     merge_thr = .7      # merging threshold, max correlation allowed
     rf = 40             # half-size of the patches in pixels. e.g., if rf=40, patches are 80x80
