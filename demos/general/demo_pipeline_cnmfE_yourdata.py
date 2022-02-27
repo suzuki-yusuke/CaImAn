@@ -67,16 +67,16 @@ def main():
     fnames = '/content/drive/MyDrive/Colab Notebooks/class_mathbio/2021/0228/data/mv.tif'  # filename to be processed
 
     filename_reorder = fnames
-    fr = 10                          # movie frame rate
-    decay_time = 0.4                 # length of a typical transient in seconds
+    fr = 30                          # movie frame rate
+    decay_time = 3                 # [0.4] length of a typical transient in seconds
 
     # motion correction parameters
     motion_correct = True            # flag for motion correction
     pw_rigid = False                 # flag for pw-rigid motion correction
 
-    gSig_filt = (6, 6)   # size of filter, in general gSig (see below),
+    gSig_filt = (6, 6)   # [(3,3)] size of filter, in general gSig (see below),
     #                      change this one if algorithm does not work
-    max_shifts = (5, 5)  # maximum allowed rigid shift
+    max_shifts = (5, 5)  # [(5,5)] maximum allowed rigid shift
     strides = (48, 48)   # start a new patch for pw-rigid motion correction every x pixels
     overlaps = (24, 24)  # overlap between pathes (size of patch strides+overlaps)
     # maximum deviation allowed for patch with respect to rigid shifts
@@ -130,10 +130,10 @@ def main():
 
 # %% Parameters for source extraction and deconvolution (CNMF-E algorithm)
 
-    p = 1               # order of the autoregressive system
+    p = 1               # [1] order of the autoregressive system
     K = None            # upper bound on number of components per patch, in general None for 1p data
-    gSig = (5, 5)       # gaussian width of a 2D gaussian kernel, which approximates a neuron
-    gSiz = (21, 21)     # average diameter of a neuron, in general 4*gSig+1
+    gSig = (5, 5)       # [(3,3)] gaussian width of a 2D gaussian kernel, which approximates a neuron
+    gSiz = (21, 21)     # [13,13] average diameter of a neuron, in general 4*gSig+1
     Ain = None          # possibility to seed with predetermined binary masks
     merge_thr = .7      # merging threshold, max correlation allowed
     rf = 40             # half-size of the patches in pixels. e.g., if rf=40, patches are 80x80
