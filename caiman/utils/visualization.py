@@ -12,6 +12,7 @@
 from builtins import str
 from builtins import range
 from past.utils import old_div
+import csv
 
 import base64
 import cv2
@@ -1023,8 +1024,8 @@ def view_patches_bar(Yr, A, C, b, f, d1, d2, YrA=None, img=None,
             ax2.set_title('Temporal background ' + str(i + 1 - nr))
 
         print('save traces...')
-        import csv
-        data = np.vstack([np.arange(T), C])
+        data = np.vstack([np.arange(T), C]).T
+        np.shape(data)
         np.savetxt("/content/drive/MyDrive/Colab Notebooks/class_mathbio/2021/0228/data/traces.csv", data, delimiter=",")
         pl.savefig('/content/drive/MyDrive/Colab Notebooks/class_mathbio/2021/0228/data/traces.jpg')
 
