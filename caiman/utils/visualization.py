@@ -1024,7 +1024,7 @@ def view_patches_bar(Yr, A, C, b, f, d1, d2, YrA=None, img=None,
 
         print('save traces...')
         import csv
-        data = np.stack([np.arange(T), C[i]])
+        data = np.vstack([np.arange(T), C])
         np.savetxt("/content/drive/MyDrive/Colab Notebooks/class_mathbio/2021/0228/data/traces.csv", data, delimiter=",")
         pl.savefig('/content/drive/MyDrive/Colab Notebooks/class_mathbio/2021/0228/data/traces.jpg')
 
