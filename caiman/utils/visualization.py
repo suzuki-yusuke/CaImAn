@@ -1026,8 +1026,8 @@ def view_patches_bar(Yr, A, C, b, f, d1, d2, YrA=None, img=None,
         data = np.vstack([np.arange(T), C]).T
         #np.savetxt("/content/drive/MyDrive/Colab Notebooks/class_mathbio/2021/0228/data/traces.csv", data, delimiter=",")
         #pl.savefig('/content/drive/MyDrive/Colab Notebooks/class_mathbio/2021/0228/data/traces.jpg')
-        np.savetxt("/content/drive/MyDrive/class/mathbio/image_processing_2/traces.csv", data, delimiter=",")
-        pl.savefig('/content/drive/MyDrive/class/mathbio/image_processing_2/traces.jpg')
+        np.savetxt("/content/drive/MyDrive/class/mathbio/image_processing_2/data/traces.csv", data, delimiter=",")
+        pl.savefig('/content/drive/MyDrive/class/mathbio/image_processing_2/data/traces.jpg')
 
 
 
