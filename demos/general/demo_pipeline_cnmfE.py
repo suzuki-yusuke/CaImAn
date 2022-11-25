@@ -64,7 +64,7 @@ def main():
     #fnames = ['data_endoscope.tif']  # filename to be processed
     #fnames = [download_demo(fnames[0])]  # download file if not already present
 
-    fnames = '/content/drive/MyDrive/Colab Notebooks/class_mathbio/2021/0228/data/data_endoscope.tif'  # filename to be processed
+    fnames = '/content/drive/MyDrive/Colab Notebooks/image_processing_2/data/data_endoscope.tif'  # filename to be processed
 
     filename_reorder = fnames
     fr = 10                          # movie frame rate
