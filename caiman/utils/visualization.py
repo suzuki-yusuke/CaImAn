@@ -1026,8 +1026,8 @@ def view_patches_bar(Yr, A, C, b, f, d1, d2, YrA=None, img=None,
         data = np.vstack([np.arange(T), C]).T
         #np.savetxt("/content/drive/MyDrive/Colab Notebooks/class_mathbio/2021/0228/data/traces.csv", data, delimiter=",")
         #pl.savefig('/content/drive/MyDrive/Colab Notebooks/class_mathbio/2021/0228/data/traces.jpg')
-        np.savetxt("/content/drive/MyDrive/class/mathbio/image_processing_2/data/traces.csv", data, delimiter=",")
-        pl.savefig('/content/drive/MyDrive/class/mathbio/image_processing_2/data/traces.jpg')
+        np.savetxt("/content/drive/MyDrive/image_processing_2/data/traces.csv", data, delimiter=",")
+        pl.savefig('/content/drive/MyDrive/image_processing_2/data/traces.jpg')
 
 
 
@@ -1146,7 +1146,7 @@ def plot_contours(A, Cn, thr=None, thr_method='max', maxthr=0.2, nrgthr=0.9, dis
 
         print('save footprints...')
         #pl.savefig('/content/drive/MyDrive/Colab Notebooks/class_mathbio/2021/0228/data/contours.jpg')
-        pl.savefig('/content/drive/MyDrive/class/mathbio/image_processing_2/data/contours.jpg')
+        pl.savefig('/content/drive/MyDrive/image_processing_2/data/contours.jpg')
 
     return coordinates
 
