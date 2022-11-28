@@ -9,7 +9,6 @@ from . import merging
 from . import pre_processing
 from . import spatial
 from . import temporal
-pip3 install oasis
 from . import oasis
 from . import params
 from . import online_cnmf
